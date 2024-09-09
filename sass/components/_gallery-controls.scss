@@ -1,0 +1,43 @@
+.controls {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  &__btn {
+    width: 3rem;
+    height: 3rem;
+    border: 0.2rem solid #fff;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__dot {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 0.2rem solid #000;
+    background-color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-inside {
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      background-color: $color-primary;
+      display: none;
+    }
+
+    &--active .controls__dot-inside {
+      display: block;
+    }
+  }
+}

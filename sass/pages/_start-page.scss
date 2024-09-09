@@ -1,0 +1,50 @@
+.start {
+  grid-row: 1 / 2;
+}
+
+.nav {
+  background-color: $color-primary;
+  height: 10%;
+  list-style: none;
+
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+
+    &--icon {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
+
+.logo {
+  height: 200%;
+  z-index: 20;
+}
+
+.pdf-icon {
+  width: 1.6rem;
+}
+
+.opentime {
+  height: 5%;
+  background-color: $color-dark-2;
+  grid-row: opentime-start / opentime-end;
+  padding-right: 18vw;
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+}

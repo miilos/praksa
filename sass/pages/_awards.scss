@@ -1,0 +1,147 @@
+.awards {
+  grid-row: 7 / 8;
+  background-color: $color-dark-1;
+  padding: 10rem 0;
+
+  display: grid;
+  grid-template-columns: 1fr [content-start] 50% [content-end] 1fr;
+
+  &__content {
+    grid-column: content-start / content-end;
+
+    & .img-line {
+      width: 100%;
+      margin: 8rem 0;
+    }
+  }
+}
+
+.genussnetz {
+  display: grid;
+  grid-template-columns: 30% 45%;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 100%;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  & h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.awards-images {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: max-content repeat(4, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.award-img {
+  &__container {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+
+    & p {
+      font-size: 1rem;
+    }
+  }
+
+  &__image {
+    height: 8rem;
+  }
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7rem;
+
+  &__heading {
+    text-align: center;
+
+    & h1 {
+      margin-top: 1rem;
+    }
+  }
+
+  &__review-cards {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    align-items: center;
+    gap: 1.5rem;
+
+    &-card {
+      height: 20rem;
+      background-color: rgba($color-dark-2, 0.5);
+      text-align: center;
+      padding: 2rem;
+
+      display: grid;
+      grid-template-rows: 80% 20%;
+      align-items: center;
+
+      &--main {
+        height: 30rem;
+        background-color: rgba($color-dark-2, 0.9);
+        position: relative;
+
+        grid-template-rows: repeat(2, 40%) 20%;
+
+        & .controls__btn {
+          position: absolute;
+          top: 45%;
+
+          &--left {
+            left: -10%;
+          }
+
+          &--right {
+            right: -10%;
+          }
+        }
+
+        &::before {
+          content: url(../img/quotes.png);
+          color: $color-primary;
+          font-size: 15rem;
+          position: absolute;
+          bottom: -20%;
+          right: 5%;
+        }
+      }
+
+      & p {
+        font-family: $font-title;
+      }
+    }
+  }
+}
+
+.review-card-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__img {
+    width: 20%;
+  }
+}
