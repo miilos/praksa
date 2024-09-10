@@ -3,47 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
     <link rel="stylesheet" href="./css/style.css" />
     <title>Brath</title>
   </head>
   <body class="container">
-    <section class="start">
-      <nav class="nav">
-        <img src="./img/logo.png" alt="Brath logo" class="logo" />
-        <li class="nav__item">
-          <a href="#" class="nav__link">Die Metzgerei</a>
+    <div class="phone-menu show-menu">
+      <ul class="phone-menu__links-container">
+        <li class="phone-menu__menu-item">
+          <a href="#" class="phone-menu__menu-item-link">Die Metzgerei</a>
         </li>
-        <li class="nav__item"><a href="#" class="nav__link">Dry Aged</a></li>
-        <li class="nav__item">
-          <a href="#" class="nav__link">Fleischversand</a>
+        <li class="phone-menu__menu-item">
+          <a href="#" class="phone-menu__menu-item-link">Dry Aged</a>
         </li>
-        <li class="nav__item">
-          <a href="#" class="nav__link">Events/Kurs</a>
+        <li class="phone-menu__menu-item">
+          <a href="#" class="phone-menu__menu-item-link">Fleischversand</a>
         </li>
-        <li class="nav__item">
-          <a href="#" class="nav__link">Partyservice</a>
+        <li class="phone-menu__menu-item">
+          <a href="#" class="phone-menu__menu-item-link">Events/Kurs</a>
         </li>
-        <li class="nav__item">
-          <a href="#" class="nav__link">Tagesessen</a>
+        <li class="phone-menu__menu-item">
+          <a href="#" class="phone-menu__menu-item-link">Partyservice</a>
         </li>
-        <li class="nav__item"><a href="#" class="nav__link">Impressum</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Kontakt</a></li>
-        <li class="nav__item">
-          <a href="#" class="nav__link nav__link--icon">
+        <li class="phone-menu__menu-item">
+          <a href="#" class="phone-menu__menu-item-link">Tagesessen</a>
+        </li>
+        <li class="phone-menu__menu-item">
+          <a href="#" class="phone-menu__menu-item-link">Impressum</a>
+        </li>
+        <li class="phone-menu__menu-item">
+          <a href="#" class="phone-menu__menu-item-link">Kontakt</a>
+        </li>
+        <li class="phone-menu__menu-item">
+          <a
+            href="#"
+            class="phone-menu__menu-item-link phone-menu__menu-item-link--icon"
+          >
             <img src="./img/pdf-icon.png" alt="PDF icon" class="pdf-icon" />
             download
           </a>
         </li>
+      </ul>
+    </div>
+
+    <section class="start">
+      <nav class="nav">
+        <img src="./img/logo.png" alt="Brath logo" class="logo" />
+        <div class="nav__links-container">
+          <li class="nav__item">
+            <a href="#" class="nav__link">Die Metzgerei</a>
+          </li>
+          <li class="nav__item"><a href="#" class="nav__link">Dry Aged</a></li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Fleischversand</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Events/Kurs</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Partyservice</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Tagesessen</a>
+          </li>
+          <li class="nav__item"><a href="#" class="nav__link">Impressum</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Kontakt</a></li>
+          <li class="nav__item download__link">
+            <a href="#" class="nav__link nav__link--icon">
+              <img src="./img/pdf-icon.png" alt="PDF icon" class="pdf-icon" />
+              download
+            </a>
+          </li>
+          <li class="nav__item burger__container">
+            <span class="material-symbols-outlined open-icon">
+              density_medium
+            </span>
+            <span class="material-symbols-outlined close-icon"> close </span>
+          </li>
+        </div>
       </nav>
 
       <div class="opentime">
-        <img src="./img/clock.png" alt="Clock icon" class="clock-icon" />
-        <p>
-          Opentime: Di. - Fr.: 07:00-13:00 und 15:00-18:30. Sa.: 07:30 - 12:30
-        </p>
+        <div class="opentime__container">
+          <img src="./img/clock.png" alt="Clock icon" class="clock-icon" />
+          <p>
+            Opentime: Di. - Fr.: 07:00-13:00 und 15:00-18:30. Sa.: 07:30 - 12:30
+          </p>
+        </div>
       </div>
 
       <section class="gallery">
+        <img src="./img/portrait.jpg" alt="Portrait" class="gallery__img" />
         <div class="gallery__text-container">
           <div class="gallery__text-container-text">
             <h1 class="heading-1">Heiko Brath Metzgermeister</h1>
@@ -56,7 +111,9 @@
         </div>
 
         <div class="controls">
-          <button class="controls__btn controls__btn--left">&larr;</button>
+          <button class="controls__btn controls__btn--left">
+            <span class="material-symbols-outlined"> arrow_back_ios </span>
+          </button>
           <div class="controls__dot controls__dot--active">
             <div class="controls__dot-inside"></div>
           </div>
@@ -72,7 +129,9 @@
           <div class="controls__dot">
             <div class="controls__dot-inside"></div>
           </div>
-          <button class="controls__btn controls__btn--right">&rarr;</button>
+          <button class="controls__btn controls__btn--right">
+            <span class="material-symbols-outlined"> arrow_forward_ios </span>
+          </button>
         </div>
       </section>
     </section>
@@ -334,8 +393,14 @@
               </p>
               <p><b>Halling Tobias</b> <br />Koch</p>
 
-              <button class="controls__btn controls__btn--left">&larr;</button>
-              <button class="controls__btn controls__btn--right">&rarr;</button>
+              <button class="controls__btn controls__btn--left">
+                <span class="material-symbols-outlined"> arrow_back_ios </span>
+              </button>
+              <button class="controls__btn controls__btn--right">
+                <span class="material-symbols-outlined">
+                  arrow_forward_ios
+                </span>
+              </button>
             </div>
             <div class="reviews__review-cards-card">
               <p>
@@ -382,5 +447,7 @@
       </p>
       <p class="credits__author">Code and design by <b>StudioPresent</b></p>
     </div>
+
+    <script src="./js/index.js"></script>
   </body>
 </html>

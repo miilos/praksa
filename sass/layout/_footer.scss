@@ -1,0 +1,129 @@
+.footer {
+  grid-row: 8 / 9;
+  background-color: $color-primary;
+
+  display: grid;
+  grid-template-columns: 0.5fr 20% 1fr 20% 0.5fr;
+  align-items: center;
+  justify-items: center;
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: 100%;
+    gap: 2rem;
+    padding: 5rem 0;
+  }
+
+  &__info {
+    grid-column: 2 / 3;
+    justify-self: start;
+
+    @media only screen and (max-width: $bp-smallest) {
+      grid-row: 1 / 2;
+      grid-column: 1 / -1;
+      justify-self: center;
+      text-align: center;
+    }
+
+    &-list {
+      list-style: none;
+      line-height: 1.5;
+    }
+  }
+
+  &__logo {
+    grid-column: 3 / 4;
+    height: 70%;
+
+    @media only screen and (max-width: $bp-smallest) {
+      grid-row: 2 / 3;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__socials {
+    grid-column: 4 / 5;
+    display: grid;
+    grid-template-columns: max-content min-content;
+    justify-self: end;
+    align-items: center;
+    gap: 1rem;
+
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(2, min-content);
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-self: start;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      grid-row: 3 / 4;
+      grid-column: 1 / -1;
+      justify-self: center;
+      gap: 1.5rem;
+    }
+
+    &-icons {
+      @media only screen and (max-width: $bp-large) {
+        width: 100%;
+      }
+    }
+
+    &-p {
+      @media only screen and (max-width: $bp-large) {
+        text-align: right;
+      }
+
+      @media only screen and (max-width: $bp-smallest) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.credits {
+  grid-row: 9 / 10;
+  background-color: $color-primary-dark;
+  color: rgba(#fff, 0.5);
+  padding: 0.5rem;
+
+  display: grid;
+  grid-template-columns: 0.5fr 20% 1fr 20% 0.5fr;
+  justify-items: center;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: 100%;
+  }
+
+  &__copyright {
+    grid-column: 2 / 3;
+    justify-self: start;
+
+    @media only screen and (max-width: $bp-smallest) {
+      grid-row: 1 / 2;
+      grid-column: 1 / -1;
+      gap: 2rem;
+      padding: 2rem 0;
+      justify-self: center;
+    }
+  }
+
+  &__author {
+    grid-column: 4 / 5;
+    justify-self: end;
+
+    @media only screen and (max-width: $bp-large) {
+      text-align: right;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      grid-row: 2 / 3;
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+  }
+}

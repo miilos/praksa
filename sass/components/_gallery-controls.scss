@@ -7,6 +7,15 @@
   justify-content: center;
   gap: 1.5rem;
 
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    display: none;
+  }
+
   &__btn {
     width: 3rem;
     height: 3rem;
@@ -15,6 +24,14 @@
     background-color: transparent;
     color: #fff;
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+      font-size: 1.3rem;
+    }
   }
 
   &__dot {

@@ -1,19 +1,20 @@
-@import "./pages/base";
+@import "./base";
 
-@import "./mixins/grid-mixin";
+@import "./abstracts/grid-mixin";
 
-@import "./pages/start-page";
-@import "./pages/gallery";
-@import "./pages/dry-aged";
-@import "./pages/grillkurs";
-@import "./pages/handwerk";
-@import "./pages/spices";
-@import "./pages/fleischversand";
-@import "./pages/awards";
-@import "./pages/footer";
+@import "./layout/start-page";
+@import "./layout/gallery";
+@import "./layout/dry-aged";
+@import "./layout/grillkurs";
+@import "./layout/handwerk";
+@import "./layout/spices";
+@import "./layout/fleischversand";
+@import "./layout/awards";
+@import "./layout/footer";
 
 @import "./utils/typography";
 
 @import "./components/gallery-controls";
 @import "./components/buttons";
 @import "./components/img-line";
+@import "./components/phone-menu";
