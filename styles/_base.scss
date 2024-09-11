@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+// COLOR VARIABLES
+$color-primary: #a62120;
+$color-primary-dark: #66000b;
+$color-dark-1: #000000f0;
+$color-dark-2: #252525;
+$color-light-1: #ffe7e6;
+
+// FONT VARIABLES
+$font-primary: "Roboto Condensed", sans-serif;
+$font-title: "Roboto", sans-serif;
+
+// RESPONSIVE BREAKPOINT VARIABLES
+$bp-largest: 1280px;
+$bp-large: 1024px;
+$bp-medium: 768px;
+$bp-small: 600px;
+$bp-smallest: 480px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 1.3rem;
+  font-weight: 300;
+  width: 100%;
+}
+
+.theme {
+  &--light {
+    background-color: $color-light-1;
+    color: $color-dark-1;
+  }
+
+  &--dark {
+    background-color: $color-dark-1;
+    color: $color-light-1;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(3, 100vh) min-content 100vh 50vh repeat(
+      3,
+      min-content
+    );
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: 100vh repeat(4, min-content) 50vh repeat(3, min-content);
+  }
+}

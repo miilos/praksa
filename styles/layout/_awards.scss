@@ -1,0 +1,279 @@
+.awards {
+  grid-row: 7 / 8;
+  padding: 10rem 0;
+
+  display: grid;
+  grid-template-columns: 1fr [content-start] 50% [content-end] 1fr;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-columns: 1fr [content-start] 70% [content-end] 1fr;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: [content-start] 100% [content-end];
+  }
+
+  &__content {
+    grid-column: content-start / content-end;
+
+    & .img-line {
+      width: 100%;
+      margin: 8rem 0;
+    }
+  }
+}
+
+.genussnetz {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  align-items: center;
+  justify-content: space-between;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: repeat(2, 30%);
+    justify-content: space-evenly;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: 100%;
+    gap: 10rem;
+    justify-items: center;
+  }
+
+  &__logo {
+    width: 100%;
+
+    @media only screen and (max-width: $bp-small) {
+      width: 50%;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      width: 70%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-start;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-small) {
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  & h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.awards-images {
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: max-content repeat(4, 1fr);
+  gap: 3rem;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-largest) {
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: repeat(4, 10rem);
+    justify-content: center;
+
+    & h1 {
+      grid-column: 1 / -1;
+      justify-self: center;
+      text-align: center;
+
+      @media only screen and (max-width: $bp-smallest) {
+        margin-bottom: 3rem;
+        width: 80%;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+.award-img {
+  &__container {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+
+    & p {
+      color: lighten($color-dark-1, 30);
+      font-size: 1rem;
+    }
+  }
+
+  &__image {
+    height: 8rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      height: 10rem;
+    }
+  }
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7rem;
+
+  &__heading {
+    text-align: center;
+
+    & h1 {
+      margin-top: 1rem;
+    }
+  }
+
+  &__review-cards {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+    @media only screen and (max-width: $bp-large) {
+      font-size: 1.2rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 3rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      grid-template-columns: 100%;
+      font-size: 1.3rem;
+    }
+
+    &-card {
+      height: 20rem;
+      background-color: rgba($color-dark-2, 0.5);
+      color: $color-light-1;
+      text-align: center;
+      padding: 2rem;
+
+      display: grid;
+      grid-template-rows: 80% 20%;
+      align-items: center;
+
+      @media only screen and (max-width: $bp-smallest) {
+        &:not(.reviews__review-cards-card--main) {
+          display: none;
+        }
+      }
+
+      &--main {
+        height: 30rem;
+        background-color: rgba($color-dark-2, 0.9);
+        position: relative;
+
+        grid-template-rows: repeat(2, 40%) 20%;
+
+        & .controls__btn {
+          position: absolute;
+          width: 4rem;
+          height: 4rem;
+          font-size: 2rem;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &--left {
+            left: -10%;
+
+            @media only screen and (max-width: $bp-smallest) {
+              bottom: -17%;
+              left: 32.5%;
+            }
+          }
+
+          &--right {
+            right: -10%;
+
+            @media only screen and (max-width: $bp-smallest) {
+              bottom: -17%;
+              right: 32.5%;
+            }
+          }
+        }
+
+        &::before {
+          content: url(../public/img/quotes.png);
+          color: $color-primary;
+          position: absolute;
+          bottom: -10%;
+          right: 5%;
+
+          @media only screen and (max-width: $bp-smallest) {
+            display: none;
+          }
+        }
+      }
+
+      & p {
+        font-family: $font-title;
+      }
+    }
+  }
+
+  & button {
+    @media only screen and (max-width: $bp-smallest) {
+      margin-top: 5rem;
+    }
+  }
+}
+
+.review-card-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__img {
+    width: 20%;
+
+    @media only screen and (max-width: $bp-largest) {
+      width: 25%;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      width: 30%;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      width: 20%;
+    }
+  }
+}
+
+/* .reviews__review-cards
+  > .swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+  grid-column: 1 / -1;
+  width: 100%;
+} */

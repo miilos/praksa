@@ -1,0 +1,21 @@
+.fleischversand {
+  grid-row: 6 / 7;
+  background-image: linear-gradient(
+      rgba($color-dark-1, 0.7),
+      rgba($color-dark-1, 0.7)
+    ),
+    url(../public/img/fleischversand-img.png);
+  color: $color-light-1;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  & h2 {
+    font-size: 2.5rem;
+  }
+}

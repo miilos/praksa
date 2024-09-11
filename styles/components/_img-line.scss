@@ -1,0 +1,22 @@
+.img-line {
+  width: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  @media only screen and (max-width: $bp-small) {
+    width: 100%;
+  }
+
+  &__logo {
+    width: 6rem;
+    z-index: 20;
+  }
+
+  &__line {
+    width: 50%;
+    border: 0.1rem solid $color-dark-2;
+  }
+}

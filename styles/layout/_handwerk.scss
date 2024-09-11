@@ -1,0 +1,60 @@
+.handwerk {
+  grid-row: 4 / 5;
+  padding: 10rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 5rem 0;
+  }
+
+  &__headings,
+  & > .paragraph {
+    width: 33.3%;
+    text-align: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 70%;
+    }
+  }
+
+  & > .img-line {
+    margin-top: 5rem;
+
+    @media only screen and (max-width: $bp-large) {
+      margin-top: 0;
+    }
+  }
+}
+
+.handwerk__images {
+  width: 50%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-columns: repeat(2, 15rem);
+    grid-template-rows: repeat(2, 15rem);
+    justify-content: center;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    width: 85%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

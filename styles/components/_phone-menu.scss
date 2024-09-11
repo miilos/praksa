@@ -1,0 +1,41 @@
+.phone-menu {
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-primary;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateX(100%);
+  transition: 0.3s;
+
+  &__links-container {
+    list-style: none;
+  }
+
+  &__menu-item {
+    padding: 1.5rem 4rem;
+
+    display: flex;
+    justify-content: center;
+
+    &-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.5rem;
+
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
+
+.show-menu {
+  transform: translateX(0);
+}

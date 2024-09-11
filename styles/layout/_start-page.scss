@@ -1,0 +1,121 @@
+.start {
+  grid-row: 1 / 2;
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: 10% min-content 1fr;
+}
+
+.nav {
+  grid-row: 1 / 2;
+  background-color: $color-primary;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    justify-content: space-between;
+    padding-right: 1rem;
+  }
+
+  &__links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    @media only screen and (max-width: $bp-large) {
+      padding-right: 1rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      gap: 2rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      &:not(.download__link, .burger__container) {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+
+    &--icon {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
+
+.logo {
+  height: 200%;
+  z-index: 20;
+}
+
+.pdf-icon {
+  width: 1.6rem;
+}
+
+.burger__container {
+  cursor: pointer;
+  display: none;
+  color: $color-light-1;
+  z-index: 51;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+  }
+}
+
+.opentime {
+  height: min-content;
+  background-color: $color-dark-2;
+  color: $color-light-1;
+  grid-row: 2 / 3;
+  padding: 0.5rem 0;
+  padding-right: 20vw;
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+
+  @media only screen and (max-width: $bp-large) {
+    padding-right: 5vw;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    padding-right: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding-right: 0.5rem;
+  }
+
+  &__container {
+    width: 70%;
+    display: flex;
+    gap: 0.2rem;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    @media only screen and (max-width: $bp-smallest) {
+      width: 50%;
+    }
+  }
+}

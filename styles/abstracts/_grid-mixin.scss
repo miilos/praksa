@@ -1,0 +1,27 @@
+// kreira grid koji container podeli na levu i desnu kolonu koje zauzimaju po pola containera
+@mixin grid($gap) {
+  display: grid;
+  // gornji i donji redovi u grid-template-rows sluze da content ostane uvek centriran
+  grid-template-rows: 1fr [content-start] 70% [content-end] 1fr;
+  grid-template-columns: repeat(2, 50%);
+  align-items: center;
+
+  &__text {
+    grid-row: content-start / content-end;
+    grid-column: 1 / 2;
+
+    // text container stavlja u levu kolonu i u njemu pravi jos dve kolone, levu za padding, desnu za content
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    gap: $gap;
+    justify-items: start;
+
+    & > * {
+      grid-column: 2 / 3;
+    }
+
+    & p {
+      width: 70%;
+    }
+  }
+}
