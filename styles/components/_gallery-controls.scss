@@ -17,32 +17,6 @@
     display: none;
   }
 
-  &__btn {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background-color: transparent;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    & span {
-      font-size: 1.3rem;
-    }
-
-    &--light {
-      border: 0.2rem solid $color-dark-1;
-      color: $color-dark-1;
-    }
-
-    &--dark {
-      border: 0.2rem solid $color-light-1;
-      color: $color-light-1;
-    }
-  }
-
   &__dot {
     width: 2rem;
     height: 2rem;

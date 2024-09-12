@@ -636,6 +636,7 @@ body {
 .fleischversand {
   grid-row: 6/7;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../public/img/fleischversand-img.png);
+  background-attachment: fixed;
   color: #ffe7e6;
   background-size: cover;
   background-position: center;
@@ -784,6 +785,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 7rem;
+  position: relative;
 }
 .reviews__heading {
   text-align: center;
@@ -793,6 +795,7 @@ body {
 }
 .reviews__review-cards {
   width: 100%;
+  position: relative;
   display: grid;
   grid-template-columns: 30% 40% 30%;
   align-items: center;
@@ -830,49 +833,16 @@ body {
   grid-template-rows: 80% 20%;
   align-items: center;
 }
-@media only screen and (max-width: 480px) {
-  .reviews__review-cards-card:not(.reviews__review-cards-card--main) {
-    display: none;
-  }
-}
 .reviews__review-cards-card--main {
   height: 30rem;
   background-color: rgba(37, 37, 37, 0.9);
-  position: relative;
   grid-template-rows: repeat(2, 40%) 20%;
-}
-.reviews__review-cards-card--main .controls__btn {
-  position: absolute;
-  width: 4rem;
-  height: 4rem;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.reviews__review-cards-card--main .controls__btn--left {
-  left: -10%;
-}
-@media only screen and (max-width: 480px) {
-  .reviews__review-cards-card--main .controls__btn--left {
-    bottom: -17%;
-    left: 32.5%;
-  }
-}
-.reviews__review-cards-card--main .controls__btn--right {
-  right: -10%;
-}
-@media only screen and (max-width: 480px) {
-  .reviews__review-cards-card--main .controls__btn--right {
-    bottom: -17%;
-    right: 32.5%;
-  }
 }
 .reviews__review-cards-card--main::before {
   content: url(../public/img/quotes.png);
   color: #a62120;
   position: absolute;
-  bottom: -10%;
+  bottom: -5%;
   right: 5%;
 }
 @media only screen and (max-width: 480px) {
@@ -886,6 +856,27 @@ body {
 @media only screen and (max-width: 480px) {
   .reviews button {
     margin-top: 5rem;
+  }
+}
+
+.review-controls__btn {
+  position: absolute;
+  top: 50%;
+}
+.review-controls__btn--left {
+  left: 30%;
+}
+@media only screen and (max-width: 480px) {
+  .review-controls__btn--left {
+    top: 70%;
+  }
+}
+.review-controls__btn--right {
+  right: 30%;
+}
+@media only screen and (max-width: 480px) {
+  .review-controls__btn--right {
+    top: 70%;
   }
 }
 
@@ -913,11 +904,17 @@ body {
   }
 }
 
-/* .reviews__review-cards
-  > .swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
-  grid-column: 1 / -1;
+.reviews__review-cards > .swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+  grid-column: 1/-1;
   width: 100%;
-} */
+}
+.reviews__review-cards .swiper-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: visible;
+}
+
 .footer {
   grid-row: 8/9;
   background-color: #a62120;
@@ -1090,27 +1087,6 @@ body {
     display: none;
   }
 }
-.controls__btn {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background-color: transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.controls__btn span {
-  font-size: 1.3rem;
-}
-.controls__btn--light {
-  border: 0.2rem solid rgba(0, 0, 0, 0.9411764706);
-  color: rgba(0, 0, 0, 0.9411764706);
-}
-.controls__btn--dark {
-  border: 0.2rem solid #ffe7e6;
-  color: #ffe7e6;
-}
 .controls__dot {
   width: 2rem;
   height: 2rem;
@@ -1151,6 +1127,29 @@ body {
   background-color: #fff;
   border: 0.1rem solid #a62120;
   color: #000;
+}
+
+.controls__btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.controls__btn span {
+  font-size: 1.3rem;
+}
+.controls__btn--light {
+  border: 0.2rem solid rgba(0, 0, 0, 0.9411764706);
+  color: rgba(0, 0, 0, 0.9411764706);
+}
+.controls__btn--dark {
+  border: 0.2rem solid #ffe7e6;
+  color: #ffe7e6;
 }
 
 .theme-toggle-btn {

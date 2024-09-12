@@ -21,6 +21,33 @@
   }
 }
 
+.controls__btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & span {
+    font-size: 1.3rem;
+  }
+
+  &--light {
+    border: 0.2rem solid $color-dark-1;
+    color: $color-dark-1;
+  }
+
+  &--dark {
+    border: 0.2rem solid $color-light-1;
+    color: $color-light-1;
+  }
+}
+
 .theme-toggle-btn {
   position: fixed;
   bottom: 3rem;

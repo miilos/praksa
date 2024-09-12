@@ -14,6 +14,10 @@ import ThemeToggleBtn from "./react-components/utils/ThemeToggleBtn";
 
 function App() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [popupAlredyShown, setPopupAlreadyShown] = useState(function () {
+    const state = localStorage.getItem("popupShown");
+    return state ? state : false;
+  });
   const [theme, setTheme] = useState(function () {
     const initialState = localStorage.getItem("theme");
     return initialState ? initialState : "dark";
@@ -21,6 +25,10 @@ function App() {
 
   function handlePopupClose() {
     setIsPopupVisible(false);
+    setPopupAlreadyShown(() => {
+      localStorage.setItem("popupShown", true);
+      return true;
+    });
   }
 
   function handleToggleTheme() {
@@ -31,16 +39,21 @@ function App() {
     });
   }
 
-  useEffect(function () {
-    setTimeout(() => setIsPopupVisible(true), 3000);
-  }, []);
+  useEffect(
+    function () {
+      setTimeout(() => {
+        if (!popupAlredyShown) setIsPopupVisible(true);
+      }, 3000);
+    },
+    [popupAlredyShown]
+  );
 
   useEffect(
     function () {
       if (isPopupVisible) document.body.style.overflow = "hidden";
       else document.body.style.overflow = "visible";
     },
-    [isPopupVisible]
+    [isPopupVisible, popupAlredyShown]
   );
 
   return (

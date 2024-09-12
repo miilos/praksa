@@ -1,7 +1,13 @@
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
-export default function ReviewCard({ isMain, text, author }) {
+export default function ReviewCard({
+  isMain,
+  text,
+  author,
+  onClickFwd,
+  onClickBack,
+}) {
   const theme = useContext(ThemeContext);
 
   return (
@@ -28,20 +34,7 @@ export default function ReviewCard({ isMain, text, author }) {
       <p>{text}</p>
       <p>{author}</p>
 
-      {isMain && (
-        <>
-          <button
-            className={`controls__btn controls__btn--${theme} controls__btn--left`}
-          >
-            <span className="material-symbols-outlined"> arrow_back_ios </span>
-          </button>
-          <button
-            className={`controls__btn controls__btn--${theme} controls__btn--right`}
-          >
-            <span className="material-symbols-outlined">arrow_forward_ios</span>
-          </button>
-        </>
-      )}
+      {isMain && <></>}
     </div>
   );
 }

@@ -136,6 +136,7 @@
   flex-direction: column;
   align-items: center;
   gap: 7rem;
+  position: relative;
 
   &__heading {
     text-align: center;
@@ -147,6 +148,7 @@
 
   &__review-cards {
     width: 100%;
+    position: relative;
 
     display: grid;
     grid-template-columns: 30% 40% 30%;
@@ -182,53 +184,17 @@
       grid-template-rows: 80% 20%;
       align-items: center;
 
-      @media only screen and (max-width: $bp-smallest) {
-        &:not(.reviews__review-cards-card--main) {
-          display: none;
-        }
-      }
-
       &--main {
         height: 30rem;
         background-color: rgba($color-dark-2, 0.9);
-        position: relative;
 
         grid-template-rows: repeat(2, 40%) 20%;
-
-        & .controls__btn {
-          position: absolute;
-          width: 4rem;
-          height: 4rem;
-          font-size: 2rem;
-
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          &--left {
-            left: -10%;
-
-            @media only screen and (max-width: $bp-smallest) {
-              bottom: -17%;
-              left: 32.5%;
-            }
-          }
-
-          &--right {
-            right: -10%;
-
-            @media only screen and (max-width: $bp-smallest) {
-              bottom: -17%;
-              right: 32.5%;
-            }
-          }
-        }
 
         &::before {
           content: url(../public/img/quotes.png);
           color: $color-primary;
           position: absolute;
-          bottom: -10%;
+          bottom: -5%;
           right: 5%;
 
           @media only screen and (max-width: $bp-smallest) {
@@ -246,6 +212,27 @@
   & button {
     @media only screen and (max-width: $bp-smallest) {
       margin-top: 5rem;
+    }
+  }
+}
+
+.review-controls__btn {
+  position: absolute;
+  top: 50%;
+
+  &--left {
+    left: 30%;
+
+    @media only screen and (max-width: $bp-smallest) {
+      top: 70%;
+    }
+  }
+
+  &--right {
+    right: 30%;
+
+    @media only screen and (max-width: $bp-smallest) {
+      top: 70%;
     }
   }
 }
@@ -272,8 +259,17 @@
   }
 }
 
-/* .reviews__review-cards
-  > .swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
-  grid-column: 1 / -1;
-  width: 100%;
-} */
+// pozicioniranje swiper containera za reviews i pozicioniranje review kartica u containeru
+.reviews__review-cards {
+  & > .swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  & .swiper-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: visible;
+  }
+}
